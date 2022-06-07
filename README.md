@@ -1,16 +1,31 @@
-# bytebank
+# ead_flutter_alura_criando-um-app
 
-A new Flutter project.
+> Projeto referente a [este](https://www.alura.com.br/curso-online-flutter-crie-primeiro-app) curso.
 
-## Getting Started
+## Setup Linux
 
-This project is a starting point for a Flutter application.
+1. Baixe o flutter
 
-A few resources to get you started if this is your first Flutter project:
+```sh
+sudo snap install flutter --classic
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. Baixe o [Android Studio](https://developer.android.com/studio)
+    1. Descompacte
+    2. Mova para ~
+    3. Instale com `./bin/studio.sh`
+    4. Adicione `$HOME/Android/Sdk` ao `PATH`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Execute ``flutter doctor`` para verificar pendências da instalação
+
+## Run on physical device
+
+1. Plugar USB
+    - Veja se o dispositivo está disponível com ``flutter devices``
+2. Execute o app ``flutter run``
+
+## Run on emulator
+
+1. Localize o [emulador](https://developer.android.com/studio/run/managing-avds#createavd) ``flutter emulators``
+2. Ative o emulador ``flutter emulators --launch <emulator id>``
+3. Execute o app ``flutter run``
