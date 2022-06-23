@@ -31,3 +31,7 @@ sudo snap install flutter --classic
 1. Localize o [emulador](https://developer.android.com/studio/run/managing-avds#createavd) ``flutter emulators``
 2. Ative o emulador ``flutter emulators --launch <emulator id>``
 3. Execute o app ``flutter run``
+
+## Terminal tips
+
+- `r` para hot reload
