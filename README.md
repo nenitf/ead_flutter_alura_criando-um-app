@@ -2,6 +2,8 @@
 
 > Projeto referente a [este](https://www.alura.com.br/curso-online-flutter-crie-primeiro-app) curso.
 
+> Não entendi pq o app não atualizou o statefull widget e abandonei o curso
+
 > [Catalogo de widgets](https://docs.flutter.dev/development/ui/widgets/material) [Doc dos widgets](https://api.flutter.dev/flutter/widgets/widgets-library.html#classes)
 
 ## Setup Linux
