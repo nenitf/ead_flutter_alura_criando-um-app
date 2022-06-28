@@ -108,7 +108,6 @@ class ItemTransferencia extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Card(
       child: ListTile(
         leading: Icon(Icons.monetization_on),
@@ -119,42 +118,43 @@ class ItemTransferencia extends StatelessWidget {
   }
 }
 
-class ListaTransferencias extends StatelessWidget {
-  final List<Transferencia> _transferencias = [];
+class ListaTransferenciasState extends State<ListaTransferencias> {
   @override
   Widget build(BuildContext context) {
-    _transferencias.add(Transferencia(100.0, 1000));
-    _transferencias.add(Transferencia(100.0, 1000));
-    _transferencias.add(Transferencia(100.0, 1000));
-    _transferencias.add(Transferencia(100.0, 1000));
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Transferências'),
+        title: Text('Transferências'),
       ),
       body: ListView.builder(
-        itemCount: _transferencias.length,
+        itemCount: widget._transferencias.length,
         itemBuilder: (context, indice) {
-          final transferencia = _transferencias[indice];
+          final transferencia = widget._transferencias[indice];
           return ItemTransferencia(transferencia);
         },
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          final Future<Transferencia?> future =
+          final Future<Transferencia> future =
               Navigator.push(context, MaterialPageRoute(builder: (context) {
             return FormularioTransferencia();
-          }));
+          })) as Future<Transferencia>;
           future.then((transferenciaRecebida) {
             debugPrint('chegou no then do future');
             debugPrint('$transferenciaRecebida');
-            if (transferenciaRecebida != null) {
-              _transferencias.add(transferenciaRecebida);
-              debugPrint('$transferenciaRecebida');
-            }
+            widget._transferencias.add(transferenciaRecebida);
           });
         },
       ),
     );
+  }
+}
+
+class ListaTransferencias extends StatefulWidget {
+  final List<Transferencia> _transferencias = [];
+
+  @override
+  State<StatefulWidget> createState() {
+    return ListaTransferenciasState();
   }
 }
